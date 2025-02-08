@@ -1,4 +1,4 @@
-todoList=[]
+todoList=['knvdfn','gaurav','this my arr']
 displayItems()
 function addTodo(){
     let input_select=document.querySelector('.todo_input');
@@ -15,10 +15,11 @@ function displayItems(){
         newHtml+=`
          <div>
             <span>${todoList[i]}</span>
-            <button>Delete</button>
-        </div>`
+            <button onclick="todoList.splice(${i},1);displayItems();">Delete</button>
+        </div>
+        `;
 
-        disElement.innerHTML=newHtml;
     }
+    disElement.innerHTML=newHtml;
 
 }
