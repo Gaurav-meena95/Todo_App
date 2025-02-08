@@ -9,9 +9,16 @@ function addTodo(){
     displayItems()
 }
 function displayItems(){
-    let disElement=document.querySelector('.list-item');
+    let disElement=document.querySelector('.todo-container');
+    let newHtml='';
     for (i=0;i<todoList.length;i++){
-        disElement.innerText=disElement.innerText+todoList[i];
+        newHtml+=`
+         <div>
+            <span>${todoList[i]}</span>
+            <button>Delete</button>
+        </div>`
+
+        disElement.innerHTML=newHtml;
     }
 
 }
