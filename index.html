@@ -8,11 +8,13 @@
 <link rel="stylesheet" href="style.css">
 <body>
     <h1 class="main-heading">TODO APP</h1>
-    <input type="text" placeholder="Ente TODO Here....." class="todo_input">
-    <input type="date" >
-    <button onclick="addTodo()">ADD</button>
+    <div class="grid-container">
+        <input type="text" placeholder="Ente TODO Here....." class="todo_input">
+        <input type="date" class="todo-date" >
+        <button class="add" onclick="addTodo()">ADD</button>
+    </div>
 
-    <div class="todo-container"></div>
+    <div class="todo-container grid-container"></div>
 
    
     <script src="script.js"></script>
