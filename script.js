@@ -1,21 +1,6 @@
-todoList=[
-    {
-        item:'knvdfn',
-        dueDate:'10/23/2025'
-    },
-    {
-        item:'knvdfn',
-        dueDate:'10/23/2025'
-    },
-    {
-        item:'knvdfn',
-        dueDate:'10/23/2025'
-    },
-    {
-        item:'knvdfn',
-        dueDate:'10/23/2025'
-    },
-]
+let saveList=localStorage.getItem('totdList');
+todoList=saveList ?JSON.parse(todoList):[]
+
 displayItems()
 function addTodo(){
     let input_select=document.querySelector('.todo_input');
@@ -25,7 +10,8 @@ function addTodo(){
     todoList.push({item:todoItem,dueDate:todo_date});
     input_select.value='';
     date_select.value='';
-    
+
+    localStorage.setItem('todoList',JSON.stringify(todoList));
     displayItems()
 }
 function displayItems(){
@@ -37,7 +23,7 @@ function displayItems(){
 
             <span>${item}</span>
             <span>${dueDate}</span>
-            <button class='delete' onclick="todoList.splice(${i},1);displayItems();">Delete</button>
+            <button class='delete' onclick="todoList.splice(${i},1);displayItems(); localStorage.clear();">Delete</button>
       
         `;
 
